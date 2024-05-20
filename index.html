@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crylet Global Market</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: gray;
+            background-image: url('background.png');
+            background-size: cover; 
+            box-shadow: inset 0 0 1000px rgba(0, 0, 0, 0.95); 
+        }
+        nav {
+            box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+            height: 50px;
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.4);
+            position: fixed;
+            
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .nav-container a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: white;
+        }
+        .brand {
+            margin-right: 20px; 
+            margin-left: 50px;
+            font-size: 34px;
+            color: white;
+        }
+        .navcon {
+            display: flex;
+            margin-right: 20px; 
+        }
+        .search-container {
+            display: flex;
+            align-items: center; 
+            margin-right: 50px;
+        }
+        .search-container button {
+            height: 30px;
+            width: 30px;
+        }
+        .search-container input {
+            height: 30px; 
+            border-radius: 15px; 
+            border: none;
+            padding: 5px;
+        }
+        .search-dropdown {
+            position: absolute;
+            display: none;
+            background-color: #f9f9f9;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 2;
+        }
+        
+        .Text{
+            margin-top: 50px;
+            height: 500px;
+            width: 600px;
+            color: white;
+            font-size: 22px;
+            
+        }
+        .dark{
+        background-color: rgba(0, 0, 0, 0.2);
+        background-size: cover; 
+        margin: 0px;
+        padding: 70px;
+        display: flex;
+        }
+        .dark button{
+            background-color: rgba(0, 0, 0, 0.3);
+            width: 300px;
+            height: 50px;
+            border-color: white;
+            color: white;
+            border-style: flat;
+            font-size: 20px;
+            border-width: thin;
+        }
+        .imagemove{
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
+            border-style: hidden;
+            border-radius: 20px;
+            height: 400px;
+            width: 700px;
+            background-color: red;
+            margin-top: 80px;
+            margin-left: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+    
+
+.carousel-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-image.active {
+    opacity: 1;
+}
+        
+    </style>
+</head>
+<body>
+<nav>
+    <div class="nav-container">
+        <div class="brand">CRYLET</div>
+        <div class="navcon">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT</a> 
+            <a href="contact.html">CONTACT</a> 
+            <a href="shop.html">SHOP</a>
+        </div>
+        <div class="search-container">
+            <form action="/action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                
+              
+            </form>
+        </div>
+    </div>
+</nav>
+<div class="dark">
+<div class="Text">
+    <h1>CRYLET GLOBAL MARKET</h1>
+    <p>At Crylet Global Market, we offer exceptional products sourced from top-tier suppliers worldwide,
+         ensuring unparalleled quality and value. Our curated selection spans diverse categories, catering 
+         to all your needs with the utmost reliability and excellence. Shop with confidence at Crylet, where 
+         global standards meet local satisfaction.</p>
+         <a href="shop.html"><button>Shop Now</button></a>
+         
+</div>
+<div class="imagemove">
+    <img src="shop/131108120634-louis-vuitton-townhouse-selfridges-london.jpg" alt="Image 1" class="carousel-image">
+    <img src="shop/elegant-jewelry-store-glimmering-with-highend-business-luxury_1258-269142.jpg" alt="Image 2" class="carousel-image">
+    <img src="shop/T1_PCBang_Shop-1024x576.jpg" alt="Image 3" class="carousel-image">
+</div>
+</div>
+<script>
+    const images = document.querySelectorAll('.carousel-image');
+let currentIndex = 0;
+const intervalTime = 4000; // 4 seconds
+
+function showNextImage() {
+    images[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % images.length;
+    images[currentIndex].classList.add('active');
+}
+
+setInterval(showNextImage, intervalTime);
+
+// Initialize the first image as active
+images[currentIndex].classList.add('active');
+</script>
+</body>
+</html>

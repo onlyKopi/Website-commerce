@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Crylet Global Market</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: gray;
+            background-image: url('background.png');
+            background-size: cover;
+            box-shadow: inset 0 0 1000px rgba(0, 0, 0, 0.95);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+            height: 50px;
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.4);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .nav-container a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: white;
+        }
+        .brand {
+            margin-right: 20px;
+            margin-left: 50px;
+            font-size: 34px;
+            color: white;
+        }
+        .navcon {
+            display: flex;
+            margin-right: 20px;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+            margin-right: 50px;
+        }
+        .search-container button {
+            height: 30px;
+            width: 30px;
+        }
+        .search-container input {
+            height: 30px;
+            border-radius: 15px;
+            border: none;
+            padding: 5px;
+        }
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+            margin-top: 80px;
+        }
+        .contact-form,
+        .login-form {
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
+            width: 320px;
+            margin: 20px;
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .contact-form input,
+        .contact-form textarea,
+        .login-form input {
+            width: calc(300px - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+        .contact-form button,
+        .login-form button {
+            width: 300px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .contact-form button:hover,
+        .login-form button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <div class="nav-container">
+        <div class="brand">CRYLET</div>
+        <div class="navcon">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="shop.html">SHOP</a>
+        </div>
+        <div class="search-container">
+            <form action="/action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+            </form>
+        </div>
+    </div>
+</nav>
+<div class="form-container">
+    <div class="contact-form">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" onclick="act()">Send Message</button>
+        </form>
+    </div>
+    <div class="login-form">
+        <h2>Login</h2>
+        <form action="/login_action.php" method="post">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
+<script>
+    function act(){
+        alert("Submitted");
+    }
+</script>
+</body>
+</html>

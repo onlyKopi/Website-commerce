@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crylet Express Shop</title>
+    <style>
+        /* Include your styles here */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            list-style: none;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-image: url('background.png');
+            background-size: cover;
+            color: white;
+        }
+
+        nav {
+            box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+            height: 50px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.4);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-container a {
+            margin-right: 30px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .brand {
+            margin-right: 20px; 
+            margin-left: 50px;
+            font-size: 34px;
+        }
+
+        .navcon {
+            display: flex;
+            margin-right: 20px; 
+        }
+
+        section {
+            padding: 100px 8%;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, auto));
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
+            cursor: pointer;
+            padding-top: 2rem;
+            height: 100%;
+            width: 100%;
+        }
+
+        .box {
+            padding: 0px 20px 10px 20px;
+            background: transparent;
+            background-color: rgba(77, 72, 72, 0.8);
+            box-shadow: 5px 30px 56.1276px rgba(55, 55, 55, 0.12);
+            border-radius: 10px;
+            position: relative;
+            transition: all .35s ease;
+            height: 100%;
+            width: 100%;
+        }
+
+        .box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto 0;
+            border-radius: 20px;
+        }
+
+        .box h4 {
+            font-size: 15px;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .box h5 {
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+        }
+
+        .buy-button {
+            background-color: orangered;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px; 
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 120px;
+        }
+
+        .buy-button:hover {
+            background-color: #ed473f;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <div class="nav-container">
+        <div class="brand">CRYLET</div>
+        <div class="navcon">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT</a> 
+            <a href="contact.html">CONTACT</a> 
+            <a href="shop.html">SHOP</a>
+            <a href="cart.html">CART</a>
+        </div>
+    </div>
+</nav>
+
+<section class="shop" id="shop">
+    <div class="container">
+        <div class="box">
+            <img src="shop/t1.png" alt="T1 Jacket Variant Black">
+            <h4>T1 Jacket Variant Black</h4>
+            <h5>P1,499.00</h5>
+            <button class="buy-button" onclick="addToCart('T1 Jacket Variant Black', 1499, 'shop/t1.png')">Add to Cart</button>
+        </div>
+
+        <div class="box">
+            <img src="shop/t2.jpg" alt="T1 Jacket Variant Red">
+            <h4>T1 Jacket Variant Red</h4>
+            <h5>P1,199.00</h5>
+            <button class="buy-button" onclick="addToCart('T1 Jacket Variant Red', 1199, 'shop/t2.jpg')">Add to Cart</button>
+        </div>
+
+        <div class="box">
+            <img src="shop/t3.jpg" alt="T1 T-Shirt Black">
+            <h4>T1 T-Shirt Black</h4>
+            <h5>P800.00</h5>
+            <button class="buy-button" onclick="addToCart('T1 T-Shirt Black', 800, 'shop/t3.jpg')">Add to Cart</button>
+        </div>
+
+        <div class="box">
+            <img src="shop/t4.jpg" alt="T1 Minimalist Jacket Black">
+            <h4>T1 Minimalist Jacket Black</h4>
+            <h5>P1,300.00</h5>
+            <button class="buy-button" onclick="addToCart('T1 Minimalist Jacket Black', 1300, 'shop/t4.jpg')">Add to Cart</button>
+        </div>
+
+        <div class="box">
+            <img src="shop/t5.jpg" alt="SKT Limited Edition Shirt">
+            <h4>SKT Limited Edition Shirt</h4>
+            <h5>P1,599.00</h5>
+            <button class="buy-button" onclick="addToCart('SKT Limited Edition Shirt', 1599, 'shop/t5.jpg')">Add to Cart</button>
+        </div>
+
+        <div class="box">
+            <img src="shop/t6.jpg" alt="T1 Cap">
+            <h4>T1 Cap</h4>
+            <h5>P499.00</h5>
+            <button class="buy-button" onclick="addToCart('T1 Cap', 499, 'shop/t6.jpg')">Add to Cart</button>
+        </div>
+
+        <div class="box">
+            <img src="shop/t7.jpg" alt="T1 Shirt Blue">
+            <h4>T1 Shirt Blue</h4>
+            <h5>P800.00</h5>
+            <button class="buy-button" onclick="addToCart('T1 Shirt Blue', 800, 'shop/t7.jpg')">Add to Cart</button>
+        </div>
+
+        <div class="box">
+            <img src="shop/t8.jpg" alt="SKT T1 Black Shirt">
+            <h4>SKT T1 Black Shirt</h4>
+            <h5>P1,200.00</h5>
+            <button class="buy-button" onclick="addToCart('SKT T1 Black Shirt', 1200, 'shop/t8.jpg')">Add to Cart</button>
+        </div>
+
+        <div class="box">
+            <img src="shop/t9.jpg" alt="T1 Jacket">
+            <h4>T1 Jacket</h4>
+            <h5>P1,799.00</h5>
+            <button class="buy-button" onclick="addToCart('T1 Jacket', 1799, 'shop/t9.jpg')">Add to Cart</button>
+        </div>
+
+        <div class="box">
+            <img src="shop/t10.jpg" alt="S3 SKT Shirt">
+            <h4>S3 SKT Shirt</h4>
+            <h5>P1,499.00</h5>
+            <button class="buy-button" onclick="addToCart('S3 SKT Shirt', 1499, 'shop/t10.jpg')">Add to Cart</button>
+        </div>
+
+        <div class="box">
+            <img src="shop/t11.jpg" alt="T1 Jacket Blue">
+            <h4>T1 Jacket Blue</h4>
+            <h5>P1,699.00</h5>
+            <button class="buy-button" onclick="addToCart('T1 Jacket Blue', 1699, 'shop/t11.jpg')">Add to Cart</button>
+        </div>
+
+        <div class="box">
+            <img src="shop/t12.jpg" alt="T1 Hoodie White">
+            <h4>T1 Hoodie White</h4>
+            <h5>P1,199.00</h5>
+            <buttonclass="buy-button" onclick="addToCart('T1 Hoodie White', 1199, 'shop/t12.jpg')">Add to Cart</button>
+        </div>
+    </div>
+</section>
+
+<script>
+    function addToCart(productName, price, imageUrl) {
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const existingItemIndex = cartItems.findIndex(item => item.productName === productName);
+
+        if (existingItemIndex !== -1) {
+            cartItems[existingItemIndex].quantity += 1;
+        } else {
+            cartItems.push({ productName, price, imageUrl, quantity: 1 });
+        }
+
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        alert('Added to cart');
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const slides = document.querySelectorAll('.carousel img');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 3000);
+    });
+</script>
+
+</body>
+</html>
+
